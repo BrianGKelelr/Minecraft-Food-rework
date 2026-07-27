@@ -1,0 +1,79 @@
+{
+  "dataType": 1,
+  "variants": {},
+  "storageBasePath": "",
+  "contentsModified": "2026-07-27T02:36:26.019Z",
+  "created": "2026-07-27T02:36:23.127Z",
+  "lastOpened": "2026-07-27T02:36:26.116Z",
+  "dataStorageRelativePath": "/Rellek's Food/",
+  "editPreference": 0,
+  "name": "Rellek's Food",
+  "title": "Rellek's Food",
+  "description": "Reworks food in Minecraft",
+  "defaultBehaviorPackUniqueId": "7284956f-17eb-4a22-af03-0204d079b2f4",
+  "defaultResourcePackUniqueId": "9d6dad89-6e29-46ba-83d5-490a4901caef",
+  "defaultScriptModuleUniqueId": "993486ce-f5d1-4fce-b550-a090220af71a",
+  "defaultDataUniqueId": "626b9aca-a58f-4dfe-a2d9-0c25c85610a5",
+  "focus": 0,
+  "items": [
+    {
+      "itemType": 110,
+      "variants": {},
+      "projectPath": "/resource_packs/aop_mobs/",
+      "storageType": 1,
+      "creationType": 0,
+      "tags": [],
+      "name": "aop_mobs",
+      "isInWorld": false
+    },
+    {
+      "itemType": 14,
+      "variants": {},
+      "projectPath": "/resource_packs/aop_mobs/manifest.json",
+      "storageType": 0,
+      "creationType": 0,
+      "tags": [
+        "resourcepackmanifest"
+      ],
+      "name": "manifest.json",
+      "isInWorld": false
+    },
+    {
+      "itemType": 103,
+      "variants": {},
+      "projectPath": "/resource_packs/aop_mobs/pack_icon.png",
+      "storageType": 0,
+      "creationType": 0,
+      "tags": [],
+      "name": "pack_icon.png",
+      "isInWorld": false
+    },
+    {
+      "itemType": 13,
+      "variants": {},
+      "projectPath": "/scripts/main.ts",
+      "storageType": 0,
+      "creationType": 0,
+      "tags": [],
+      "name": "main.ts",
+      "isInWorld": false
+    }
+  ],
+  "projectFolderTitle": "Food rework",
+  "originalGitHubOwner": "microsoft",
+  "originalGitHubRepoName": "minecraft-samples",
+  "originalGitHubFolder": "/addon_starter/start",
+  "originalGalleryId": "addonStarter",
+  "creator": "RellekOS",
+  "shortName": "relleks_food",
+  "track": 0,
+  "defaultResourcePackVersion": [
+    1,
+    0,
+    0
+  ],
+  "versionMajor": 1,
+  "versionMinor": 0,
+  "versionPatch": 0,
+  "previewImageBase64": "iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAYdEVYdFNvZnR3YXJlAFBhaW50Lk5FVCA1LjEuN4vW9zkAAAC2ZVhJZklJKgAIAAAABQAaAQUAAQAAAEoAAAAbAQUAAQAAAFIAAAAoAQMAAQAAAAIAAAAxAQIAEAAAAFoAAABphwQAAQAAAGoAAAAAAAAA8nYBAOgDAADydgEA6AMAAFBhaW50Lk5FVCA1LjEuNwADAACQBwAEAAAAMDIzMAGgAwABAAAAAQAAAAWgBAABAAAAlAAAAAAAAAACAAEAAgAEAAAAUjk4AAIABwAEAAAAMDEwMAAAAABCqaniuvll8QAABC1JREFUeF7t3T+O21YQB+DZtIGBpA8QXyG9jhDfIzDSa49g96lzCfkG9kVSp9jcQG5IIBjwkeLD05/d+T5gmsHD8FH2/qAlV2IEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALwB50H1kgdfIM8YXYd8wAvkGaPrNTkt7L+nTnnwBfKMuUbKs69xjKYfcgOoQwBAYQIAChMAUJgAAG4mX+kcfcXzsDB76xh53db6vV4WZp83rkrntaP3lOeOnt8j72WuY17Y6bgwe+u887qtGnnH5ya8A4DCBAAUJgCgMAEAhQkAKOxRAiBfAe2tr3kwXMFTo1qfW1i743NXjxIAwB0IAChMAEBhAgAKEwBQ2FNuXNk5NybPudHpfUT8kZuT1rm29tRav9dLRPyUmxHxJSI+5Obk2nvaO/+viPg1NzvtPefniPicmx2OEfEpNyet827tqbW+9bmF3yLix9yc/J4bk9YxXrV8e2SuUXwY6DJ57tb81u2tnmrJ6+Zq/VDtNfLDQHutHbtVN+FXAChMAEBhAgAKEwBQmADgUv8Nqqry61Dy9chXOkdf8XQX4DJ57uj5PfJe5noLdwHW5NnXOEaTdwBQmACAwgQAFCYAoDABAIUJAChMAEBhAgAKEwBQmACAwgQAFCYA2vLfZvfWh4UHSDytfDXWmjy7t/Je5rqnvJe51j7fsacOC7Mf4bzvSgBAYQIAChMAUJgAgMIEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFxBlSejvuTGYD/nxoZjRDzn5o18W3kycet12nt+LaPmHyLilJud9h6bVyg/Knp07XVcmHGrWvvByWvnGiXP7Z0/6pHh5zy4Go8Gg8IEABQmAKAwAQCFVbkL0LrY8yU3On3LjcnfEfFvbk4XAT/l5mTUnlr+iYg/c3PSep1adyw+58bkmBuT1jm3/h9+jIh3uRkR7yPil9zs1Pq3a50br1C+8jv6CnCeO9chL5ys3QW4p7yXrWrJ67aq5bSw9rxyO7FHnr21pzfFrwBQmACAwgQAFCYAoDABAIUJgMeTr0Zv1S08NSrvZa68bi4ejACAwgQAFCYAoDABAIUJAChMANzH2hXxfOV8q+4p7+UR9sQOAgAKEwBQmACAwgQAFCYAoDABAIUJAChMAEBhAgAKEwBQmACAwgQAFCYAoDABAIUJAChMAEBhAuA+bvV13sDC99aPrr3Wng587TrlzfxPXjvXKHlu7/zDwozeKs07AChMAEBhAgAKEwBQmAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4K74Ds5Oywx8xgeIAAAAASUVORK5CYII="
+}
