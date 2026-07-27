@@ -13,6 +13,12 @@ const WELLFED2 = [
 const WELLFED3 = [
     "minecraft:mushroom_stew"
 ]
+const WELLFED4 = [
+    ""
+]
+const WELLFED5 = [
+    ""
+]
 
 /*
 Checks if the player has consumed a food item. If they have, and their hunger level is full,
@@ -42,6 +48,20 @@ world.afterEvents.itemCompleteUse.subscribe((event) => {
         system.runTimeout(() => {
             if (checkFullness(player)) {
                 player.runCommand("tag @s add well_fed_3");
+            }
+        }, 2);
+    }
+    else if (WELLFED4.includes(itemID)) {
+        system.runTimeout(() => {
+            if (checkFullness(player)) {
+                player.runCommand("tag @s add well_fed_4");
+            }
+        }, 2);
+    }
+    else if (WELLFED5.includes(itemID)) {
+        system.runTimeout(() => {
+            if (checkFullness(player)) {
+                player.runCommand("tag @s add well_fed_5");
             }
         }, 2);
     }
