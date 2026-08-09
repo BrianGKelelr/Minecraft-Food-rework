@@ -1,0 +1,12 @@
+{
+  "resource_pack_name": "relleks food resources",
+  "texture_name": "atlas.items",
+  "texture_data": {
+        "sniffer_meat": {
+            "textures": "textures/items/sniffer_meat"
+        },
+        "sniffer_meat_cooked": {
+            "textures": "textures/items/sniffer_meat_cooked"
+        }
+    }
+}

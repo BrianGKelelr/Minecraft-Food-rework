@@ -3,7 +3,7 @@
   "header": {
     "name": "Rellek's Food Behavior Pack",
     "description": "Custom Food and Hunger Rework",
-    "uuid": "0db64fbe-dfd9-4078-82cb-588d73021314",
+    "uuid": "a8bdf566-1a6a-42ed-ab50-34e664e66248",
     "version": [
       1,
       0,
@@ -18,7 +18,7 @@
   "modules": [
     {
       "type": "data",
-      "uuid": "c51e757f-f161-41b6-9712-9ceea58eddca",
+      "uuid": "7d52066f-6da1-4bd1-8917-6874fa9744c4",
       "version": [
         1,
         0,
@@ -28,7 +28,7 @@
     {
       "type": "script",
       "language": "javascript",
-      "uuid": "e7a7d78b-a106-4506-a64b-eb30cf3a19d9",
+      "uuid": "697cdadb-f791-4f17-94a7-e46df2e5498f",
       "entry": "scripts/main.js",
       "version": [
         1,
@@ -45,6 +45,10 @@
         9,
         0
       ]
+    },
+    {
+      "uuid": "3137e08a-0c9a-4720-aee2-e43a9ea744a6",
+      "version": [1, 0, 0]
     }
   ]
 }

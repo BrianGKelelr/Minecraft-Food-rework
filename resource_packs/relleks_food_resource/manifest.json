@@ -1,9 +1,9 @@
 {
   "format_version": 2,
   "header": {
-    "name": "Sample Add-on Pack",
-    "description": "Sample Add-on Resource Pack",
-    "uuid": "9d6dad89-6e29-46ba-83d5-490a4901caef",
+    "name": "relleks food resources",
+    "description": "Resource pack for relleks food",
+    "uuid": "3137e08a-0c9a-4720-aee2-e43a9ea744a6",
     "version": [
       1,
       0,
@@ -19,7 +19,7 @@
     {
       "description": "Add-on Pack Resources",
       "type": "resources",
-      "uuid": "523d72d2-3ba9-498a-bc63-8beb5fe268cb",
+      "uuid": "2cf33596-f0ac-4df6-91a3-be1104eb0a63",
       "version": [
         1,
         0,
@@ -29,7 +29,7 @@
   ],
   "dependencies": [
     {
-      "uuid": "9ec8af93-4b38-429f-a4bd-7e277a50d238",
+      "uuid": "a8bdf566-1a6a-42ed-ab50-34e664e66248",
       "version": [
         1,
         0,
