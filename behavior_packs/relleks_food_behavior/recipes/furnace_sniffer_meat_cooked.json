@@ -1,0 +1,23 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_furnace": {
+    "description": {
+      "identifier": "relleks_food:sniffer_meat_cooked"
+    },
+    "unlock": [
+      {
+        "item": "relleks_food:sniffer_meat",
+        "data": 0
+      }
+    ],
+    "tags": [
+      "furnace",
+      "smoker",
+      "campfire",
+      "soul_campfire"
+    ],
+    "input": "relleks_food:sniffer_meat",
+    "output": "relleks_food:sniffer_meat_cooked",
+    "priority": 370
+  }
+}
