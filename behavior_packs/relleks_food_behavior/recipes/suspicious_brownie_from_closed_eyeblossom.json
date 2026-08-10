@@ -1,0 +1,42 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "relleks_food:suspicious_brownie_from_closed_eyeblossom"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "ADA",
+      "BEB",
+      "CCC"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:cocoa_beans"
+      },
+      "B": {
+        "item": "minecraft:sugar"
+      },
+      "C": {
+        "item": "minecraft:wheat"
+      },
+      "E": {
+        "tag": "minecraft:egg"
+      },
+      "D": {
+        "item": "minecraft:closed_eyeblossom"
+      }
+    },
+	"unlock": [
+      {
+        "item": "minecraft:dye",
+        "data": 3
+      }
+    ],
+    "result": [
+      { "item": "relleks_food:suspicious_brownie_from_closed_eyeblossom" }
+    ]
+  }
+}

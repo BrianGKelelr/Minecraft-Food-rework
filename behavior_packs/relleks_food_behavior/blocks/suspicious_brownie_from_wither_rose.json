@@ -1,0 +1,8 @@
+{
+  "format_version": "1.26.30",
+  "minecraft:block": {
+    "description": {
+      "identifier": "relleks_food:suspicious_brownie_from_wither_rose"
+    }
+    }
+}
