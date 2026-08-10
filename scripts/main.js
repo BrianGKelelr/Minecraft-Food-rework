@@ -129,3 +129,47 @@ system2.beforeEvents.startup.subscribe(({ blockComponentRegistry }) => {
     EatBrownieComponent
   );
 });
+
+// ct:./hot_potato.ts
+import { system as system3, world as world2, EntityComponentTypes, EntityDamageCause } from "@minecraft/server";
+var armedPlayers = /* @__PURE__ */ new Set();
+world2.afterEvents.playerInventoryItemChange.subscribe((event) => {
+  const { player, itemStack, beforeItemStack } = event;
+  if (itemStack?.typeId !== "relleks_food:hot_potato") {
+    return;
+  }
+  if (beforeItemStack?.typeId === "relleks_food:hot_potato") {
+    return;
+  }
+  if (armedPlayers.has(player.id)) {
+    return;
+  }
+  armedPlayers.add(player.id);
+  player.setOnFire(10, true);
+  system3.runTimeout(() => {
+    armedPlayers.delete(player.id);
+    if (!player) return;
+    const inventory = player.getComponent(EntityComponentTypes.Inventory);
+    if (!inventory?.container) return;
+    const container = inventory.container;
+    for (let slot = 0; slot < container.size; slot++) {
+      const item = container.getItem(slot);
+      if (item?.typeId === "relleks_food:hot_potato") {
+        explode(player);
+        break;
+      }
+    }
+  }, 200);
+});
+function explode(target) {
+  if (!target) {
+    return;
+  }
+  target.dimension.createExplosion(target.location, 4, {
+    breaksBlocks: false,
+    causesFire: false,
+    allowUnderwater: true,
+    source: target
+  });
+  target.applyDamage(255, { cause: EntityDamageCause.entityExplosion });
+}
