@@ -2,7 +2,7 @@
   "format_version": "1.26.30",
   "minecraft:item": {
     "description": {
-      "identifier": "relleks_food:fruit_salad",
+      "identifier": "relleks_food:potato_baked_twice",
         "menu_category": {
         "category": "items"
       }
@@ -10,12 +10,11 @@
     "components": {
       "minecraft:food": {
         "nutrition": 6,
-        "saturation_modifier": 0.6,
-        "using_converts_to": "bowl"
+        "saturation_modifier": 0.5
       },
       "minecraft:icon": {
         "textures": {
-          "default": "fruit_salad"
+          "default": "twice_baked_potato"
         }
       },
       "minecraft:tags": {

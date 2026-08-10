@@ -19,6 +19,33 @@
         },
         "beef_stew": {
             "textures": "textures/items/beef_stew"
+        },
+        "twice_baked_potato": {
+            "textures": "textures/items/twice_baked_potato"
+        },
+        "thrice_baked_potato": {
+            "textures": "textures/items/thrice_baked_potato"
+        },
+        "quarce_baked_potato": {
+            "textures": "textures/items/quarce_baked_potato"
+        },
+        "quince_baked_potato": {
+            "textures": "textures/items/quince_baked_potato"
+        },
+        "sence_baked_potato": {
+            "textures": "textures/items/sence_baked_potato"
+        },
+        "septence_baked_potato": {
+            "textures": "textures/items/septence_baked_potato"
+        },
+        "octence_baked_potato": {
+            "textures": "textures/items/octence_baked_potato"
+        },
+        "novence_baked_potato": {
+            "textures": "textures/items/novence_baked_potato"
+        },
+        "tonce_baked_potato": {
+            "textures": "textures/items/tonce_baked_potato"
         }
     }
 }

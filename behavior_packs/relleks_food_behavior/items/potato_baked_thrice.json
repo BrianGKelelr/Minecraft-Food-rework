@@ -2,20 +2,19 @@
   "format_version": "1.26.30",
   "minecraft:item": {
     "description": {
-      "identifier": "relleks_food:fruit_salad",
+      "identifier": "relleks_food:potato_baked_thrice",
         "menu_category": {
         "category": "items"
       }
     },
     "components": {
       "minecraft:food": {
-        "nutrition": 6,
-        "saturation_modifier": 0.6,
-        "using_converts_to": "bowl"
+        "nutrition": 3,
+        "saturation_modifier": 0.3
       },
       "minecraft:icon": {
         "textures": {
-          "default": "fruit_salad"
+          "default": "thrice_baked_potato"
         }
       },
       "minecraft:tags": {

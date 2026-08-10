@@ -10,7 +10,8 @@
     "components": {
       "minecraft:food": {
         "nutrition": 12,
-        "saturation_modifier": 0.5
+        "saturation_modifier": 0.6,
+        "using_converts_to": "bowl"
       },
       "minecraft:icon": {
         "textures": {

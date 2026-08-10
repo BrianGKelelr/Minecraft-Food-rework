@@ -1,0 +1,22 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_furnace": {
+    "description": {
+      "identifier": "relleks_food:potato_baked_quarce"
+    },
+    "unlock": [
+      {
+        "item": "relleks_food:potato_baked_thrice"
+      }
+    ],
+    "tags": [
+      "furnace",
+      "smoker",
+      "campfire",
+      "soul_campfire"
+    ],
+    "input": "relleks_food:potato_baked_thrice",
+    "output": "relleks_food:potato_baked_quarce",
+    "priority": 370
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_furnace": {
+    "description": {
+      "identifier": "relleks_food:potato_baked_sence"
+    },
+    "unlock": [
+      {
+        "item": "relleks_food:potato_baked_quince"
+      }
+    ],
+    "tags": [
+      "furnace",
+      "smoker",
+      "campfire",
+      "soul_campfire"
+    ],
+    "input": "relleks_food:potato_baked_quince",
+    "output": "relleks_food:potato_baked_sence",
+    "priority": 370
+  }
+}
