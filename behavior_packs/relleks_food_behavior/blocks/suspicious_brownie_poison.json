@@ -1,8 +1,104 @@
 {
-  "format_version": "1.26.30",
+  "format_version": "1.21.110",
   "minecraft:block": {
     "description": {
-      "identifier": "relleks_food:suspicious_brownie_poison"
-    }
-    }
+      "identifier": "relleks_food:suspicious_brownie_poison",
+      "menu_category": {
+        "category": "items"
+      },
+      "states": {
+        "relleks_food:bites": [0, 1, 2, 3, 4, 5, 6]
+      }
+    },
+    "components": {
+      "minecraft:geometry": "geometry.brownie.bites0",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "brownie1",
+          "render_method": "alpha_test",
+          "ambient_occlusion": true,
+          "face_dimming": true
+        }
+      },
+      "minecraft:collision_box": { "origin": [-7, 0, -7], "size": [14, 8, 14] },
+      "minecraft:selection_box": { "origin": [-7, 0, -7], "size": [14, 8, 14] },
+      "minecraft:light_dampening": 0,
+      "minecraft:friction": 0.4,
+      "minecraft:destructible_by_mining": { "seconds_to_destroy": 0.5 },
+      "minecraft:destructible_by_explosion": { "explosion_resistance": 2.5 },
+      "relleks_food:eat_brownie": {
+        "effect": "poison",
+        "duration": 900,
+        "amplifier": 0
+      }
+    },
+    "permutations": [
+      {
+        "condition": "q.block_state('relleks_food:bites') == 1",
+        "components": {
+          "minecraft:geometry": "geometry.brownie.bites1",
+          "minecraft:material_instances": {
+            "*": { "texture": "brownie2", "render_method": "alpha_test" }
+          },
+          "minecraft:collision_box": { "origin": [-7, 0, -7], "size": [12, 8, 14] },
+          "minecraft:selection_box": { "origin": [-7, 0, -7], "size": [12, 8, 14] }
+        }
+      },
+      {
+        "condition": "q.block_state('relleks_food:bites') == 2",
+        "components": {
+          "minecraft:geometry": "geometry.brownie.bites2",
+          "minecraft:material_instances": {
+            "*": { "texture": "brownie3", "render_method": "alpha_test" }
+          },
+          "minecraft:collision_box": { "origin": [-7, 0, -7], "size": [10, 8, 14] },
+          "minecraft:selection_box": { "origin": [-7, 0, -7], "size": [10, 8, 14] }
+        }
+      },
+      {
+        "condition": "q.block_state('relleks_food:bites') == 3",
+        "components": {
+          "minecraft:geometry": "geometry.brownie.bites3",
+          "minecraft:material_instances": {
+            "*": { "texture": "brownie4", "render_method": "alpha_test" }
+          },
+          "minecraft:collision_box": { "origin": [-7, 0, -7], "size": [8, 8, 14] },
+          "minecraft:selection_box": { "origin": [-7, 0, -7], "size": [8, 8, 14] }
+        }
+      },
+      {
+        "condition": "q.block_state('relleks_food:bites') == 4",
+        "components": {
+          "minecraft:geometry": "geometry.brownie.bites4",
+          "minecraft:material_instances": {
+            "*": { "texture": "brownie5", "render_method": "alpha_test" }
+          },
+          "minecraft:collision_box": { "origin": [-7, 0, -7], "size": [6, 8, 14] },
+          "minecraft:selection_box": { "origin": [-7, 0, -7], "size": [6, 8, 14] }
+        }
+      },
+      {
+        "condition": "q.block_state('relleks_food:bites') == 5",
+        "components": {
+          "minecraft:geometry": "geometry.brownie.bites5",
+          "minecraft:material_instances": {
+            "*": { "texture": "brownie6", "render_method": "alpha_test" }
+          },
+          "minecraft:collision_box": { "origin": [-7, 0, -7], "size": [4, 8, 14] },
+          "minecraft:selection_box": { "origin": [-7, 0, -7], "size": [4, 8, 14] }
+        }
+      },
+      {
+        "condition": "q.block_state('relleks_food:bites') == 6",
+        "components": {
+          "minecraft:geometry": "geometry.brownie.bites6",
+          "minecraft:material_instances": {
+            "*": { "texture": "brownie7", "render_method": "alpha_test" }
+          },
+          "minecraft:collision_box": { "origin": [-7, 0, -7], "size": [2, 8, 14] },
+          "minecraft:selection_box": { "origin": [-7, 0, -7], "size": [2, 8, 14] }
+        }
+      }
+    ]
+  }
 }

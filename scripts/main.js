@@ -107,9 +107,7 @@ var EatBrownieComponent = {
     const { block, dimension, player } = event;
     if (!player) return;
     const bites = block.permutation.getState("relleks_food:bites");
-    const { effect, duration, amplifier } = params.params;
-    player.addEffect(effect, duration, { amplifier, showParticles: true });
-    player.addEffect("saturation", 1, { amplifier: 1, showParticles: false });
+    player.addEffect("saturation", 1, { amplifier: 2, showParticles: false });
     if (bites >= MAX_BITES) {
       dimension.setBlockType(block.location, "minecraft:air");
       return;
@@ -119,6 +117,10 @@ var EatBrownieComponent = {
       "relleks_food:bites": bites + 1
     });
     block.setPermutation(newPermutation);
+    system2.runTimeout(() => {
+      const { effect, duration, amplifier } = params.params;
+      player.addEffect(effect, duration, { amplifier, showParticles: true });
+    }, 600);
   }
 };
 system2.beforeEvents.startup.subscribe(({ blockComponentRegistry }) => {

@@ -11,10 +11,6 @@ const EatBrownieComponent = {
 
     const bites = block.permutation.getState("relleks_food:bites");
 
-    // apply brownie effect to player
-    const { effect, duration, amplifier } = params.params;
-    player.addEffect(effect, duration, { amplifier: amplifier, showParticles: true });
-
     // feed player
     player.addEffect("saturation", 1, { amplifier: 2, showParticles: false });
 
@@ -31,6 +27,12 @@ const EatBrownieComponent = {
     });
 
     block.setPermutation(newPermutation);
+
+    system.runTimeout(() => {
+      // apply brownie effect to player
+      const { effect, duration, amplifier } = params.params;
+      player.addEffect(effect, duration, { amplifier: amplifier, showParticles: true });
+    }, 600);  //apply effects after 30 seconds
   },
 };
 
