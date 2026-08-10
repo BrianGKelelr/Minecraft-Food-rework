@@ -6,8 +6,7 @@
     },
     "unlock": [
       {
-        "item": "relleks_food:sniffer_meat",
-        "data": 0
+        "item": "relleks_food:sniffer_meat"
       }
     ],
     "tags": [

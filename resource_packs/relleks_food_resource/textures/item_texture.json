@@ -7,6 +7,18 @@
         },
         "sniffer_meat_cooked": {
             "textures": "textures/items/sniffer_meat_cooked"
+        },
+        "fruit_salad": {
+            "textures": "textures/items/fruit_salad"
+        },
+        "vegetable_soup": {
+            "textures": "textures/items/vegetable_soup"
+        },
+        "mutton_stew": {
+            "textures": "textures/items/mutton_stew"
+        },
+        "beef_stew": {
+            "textures": "textures/items/beef_stew"
         }
     }
 }

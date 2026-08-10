@@ -1,0 +1,35 @@
+{
+  "format_version": "1.26.30",
+  "minecraft:item": {
+    "description": {
+      "identifier": "relleks_food:mutton_stew",
+        "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:food": {
+        "nutrition": 10,
+        "saturation_modifier": 0.5
+      },
+      "minecraft:icon": {
+        "textures": {
+          "default": "mutton_stew"
+        }
+      },
+      "minecraft:tags": {
+        "tags": [
+          "minecraft:is_food"
+        ]
+      },
+      "minecraft:use_animation": {
+        "value": "eat"
+      },
+      "minecraft:use_modifiers": {
+        "start_using": "always",
+        "use_duration": 1.6,
+        "movement_modifier": 0.35
+      }
+    }
+  }
+}

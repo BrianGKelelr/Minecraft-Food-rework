@@ -1,0 +1,39 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "relleks_food:brownie"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "AAA",
+      "BEB",
+      "CCC"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:cocoa_beans"
+      },
+      "B": {
+        "item": "minecraft:sugar"
+      },
+      "C": {
+        "item": "minecraft:wheat"
+      },
+      "E": {
+        "tag": "minecraft:egg"
+      }
+    },
+	"unlock": [
+      {
+        "item": "minecraft:dye",
+        "data": 3
+      }
+    ],
+    "result": [
+      { "item": "relleks_food:brownie" }
+    ]
+  }
+}

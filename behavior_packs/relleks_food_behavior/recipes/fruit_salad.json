@@ -1,0 +1,31 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+    "identifier": "relleks_food:fruit_salad"
+    },
+    "tags": [ "crafting_table" ],
+    "unlock": [
+      {
+        "item": "minecraft:glow_berries"
+      }
+    ],
+    "ingredients": [
+      {
+        "item": "minecraft:bowl"
+      },
+      {
+        "item": "minecraft:glow_berries"
+      },
+      {
+        "item": "minecraft:sweet_berries"
+      },
+      {
+        "item": "minecraft:melon_slice"
+      }
+    ],
+    "result": {
+      "item": "relleks_food:fruit_salad"
+    }
+  }
+}
