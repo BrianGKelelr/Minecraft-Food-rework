@@ -30,3 +30,17 @@ item.relleks_food:potato_baked_septence=Septence Baked Potato
 item.relleks_food:potato_baked_octence=Octence Baked Potato
 item.relleks_food:potato_baked_novence=Novence Baked Potato
 item.relleks_food:potato_baked_tonce=Tonce Baked Potato
+itme.relleks_food:hot_potato=Hot Potato
+
+tile.relleks_food:lanterberry_crop.name=Lanternberry Bush
+tile.relleks_food:lanternberry_block.name=Lanternberry Block
+item.relleks_food:lanternberry_seeds=Lanternberrys Seeds
+item.relleks_food:lanterberry=Lanternberry
+
+item.relleks_food:ice_cream=Ice Cream
+item.relleks_food:ice_cream_chocolate=Chocolate Ice Cream
+tile.relleks_food:cake_ice_cream.name=Ice Cream Cake
+tile.relleks_food:cake_ice_cream_chocolate.name=Chocolate Ice Cream Cake
+
+tile.relleks_food:cake_carrot.name=Carrot Cake
+tile.relleks_food:cake_chocolate.name=Chocolate Cake

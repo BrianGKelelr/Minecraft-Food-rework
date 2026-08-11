@@ -1,0 +1,35 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "relleks_food:ice_cream_chocolate"
+    },
+    "tags": [ "crafting_table" ],
+    "unlock": [
+      {
+        "item": "minecraft:ice"
+      }
+    ],
+    "pattern": [
+      "A",
+      "B",
+      "C"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:cocoa_beans"
+      },
+      "B": {
+        "item": "minecraft:ice"
+      },
+      "C": {
+        "item": "minecraft:bucket",
+        "data": 1
+      }
+    },
+    "result": [
+      { "item": "relleks_food:ice_cream_chocolate" },
+      { "item": "minecraft:bucket", "count": 1, "data": 0 }
+    ]
+  }
+}

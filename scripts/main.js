@@ -1,5 +1,5 @@
 // ct:/main.js
-import { system as system4 } from "@minecraft/server";
+import { system as system5 } from "@minecraft/server";
 
 // ct:./food.ts
 import { world, system } from "@minecraft/server";
@@ -239,10 +239,22 @@ var CropGrowthComponent = class _CropGrowthComponent {
   }
 };
 
+// ct:./itemEffectComponent.ts
+import { system as system4 } from "@minecraft/server";
+var ItemEffectComponent = class {
+  onConsume(arg, params) {
+    const { effect, tickDuration, amplifier, tickDelay } = params.params;
+    system4.runTimeout(() => {
+      arg.source.addEffect(effect, tickDuration, { amplifier, showParticles: true });
+    }, tickDelay);
+  }
+};
+
 // ct:/main.js
-system4.beforeEvents.startup.subscribe((initEvent) => {
+system5.beforeEvents.startup.subscribe((initEvent) => {
   initEvent.blockComponentRegistry.registerCustomComponent("relleks_food:eat_cake", new EatCakeComponent());
   initEvent.blockComponentRegistry.registerCustomComponent("relleks_food:block_effect", new BlockEffectComponent());
   initEvent.blockComponentRegistry.registerCustomComponent("relleks_food:harvest_berry", new HarvestBerryComponent());
   initEvent.blockComponentRegistry.registerCustomComponent("relleks_food:crop_grow", new CropGrowthComponent());
+  initEvent.itemComponentRegistry.registerCustomComponent("relleks_food:item_effect", new ItemEffectComponent());
 });
