@@ -26,10 +26,12 @@
       "minecraft:friction": 0.4,
       "minecraft:destructible_by_mining": { "seconds_to_destroy": 0.5 },
       "minecraft:destructible_by_explosion": { "explosion_resistance": 2.5 },
-      "relleks_food:eat_brownie": {
+      "relleks_food:eat_cake": {},
+      "relleks_food:block_effect": {
         "effect": "poison",
-        "duration": 900,
-        "amplifier": 0
+        "tickDuration": 900,
+        "amplifier": 0,
+        "tickDelay": 300
       }
     },
     "permutations": [

@@ -1,3 +1,6 @@
+// ct:/main.js
+import { system as system4 } from "@minecraft/server";
+
 // ct:./food.ts
 import { world, system } from "@minecraft/server";
 var WELLFED1 = [
@@ -99,39 +102,8 @@ system.runInterval(applyWellFed1Effects, 80);
 system.runInterval(applyWellFed2Effects, 40);
 system.runInterval(applyWellFedEffects, 20);
 
-// ct:./brownie.ts
-import { system as system2, BlockPermutation } from "@minecraft/server";
-var MAX_BITES = 6;
-var EatBrownieComponent = {
-  onPlayerInteract(event, params) {
-    const { block, dimension, player } = event;
-    if (!player) return;
-    const bites = block.permutation.getState("relleks_food:bites");
-    player.addEffect("saturation", 1, { amplifier: 2, showParticles: false });
-    if (bites >= MAX_BITES) {
-      dimension.setBlockType(block.location, "minecraft:air");
-      return;
-    }
-    const newPermutation = BlockPermutation.resolve(block.typeId, {
-      ...block.permutation.getAllStates(),
-      "relleks_food:bites": bites + 1
-    });
-    block.setPermutation(newPermutation);
-    system2.runTimeout(() => {
-      const { effect, duration, amplifier } = params.params;
-      player.addEffect(effect, duration, { amplifier, showParticles: true });
-    }, 600);
-  }
-};
-system2.beforeEvents.startup.subscribe(({ blockComponentRegistry }) => {
-  blockComponentRegistry.registerCustomComponent(
-    "relleks_food:eat_brownie",
-    EatBrownieComponent
-  );
-});
-
 // ct:./hot_potato.ts
-import { system as system3, world as world2, EntityComponentTypes, EntityDamageCause } from "@minecraft/server";
+import { system as system2, world as world2, EntityComponentTypes, EntityDamageCause } from "@minecraft/server";
 var armedPlayers = /* @__PURE__ */ new Set();
 world2.afterEvents.playerInventoryItemChange.subscribe((event) => {
   const { player, itemStack, beforeItemStack } = event;
@@ -146,7 +118,7 @@ world2.afterEvents.playerInventoryItemChange.subscribe((event) => {
   }
   armedPlayers.add(player.id);
   player.setOnFire(10, true);
-  system3.runTimeout(() => {
+  system2.runTimeout(() => {
     armedPlayers.delete(player.id);
     if (!player) return;
     const inventory = player.getComponent(EntityComponentTypes.Inventory);
@@ -165,7 +137,7 @@ function explode(target) {
   if (!target) {
     return;
   }
-  target.dimension.createExplosion(target.location, 4, {
+  target.dimension.createExplosion(target.location, 2, {
     breaksBlocks: false,
     causesFire: false,
     allowUnderwater: true,
@@ -173,3 +145,42 @@ function explode(target) {
   });
   target.applyDamage(255, { cause: EntityDamageCause.entityExplosion });
 }
+
+// ct:./cakeComponent.ts
+import { BlockPermutation } from "@minecraft/server";
+var EatCakeComponent = class _EatCakeComponent {
+  static MAX_BITES = 6;
+  onPlayerInteract(event) {
+    const { block, dimension, player } = event;
+    if (!player) return;
+    const bites = block.permutation.getState("relleks_food:bites");
+    player.addEffect("saturation", 1, { amplifier: 2, showParticles: false });
+    if (bites >= _EatCakeComponent.MAX_BITES) {
+      dimension.setBlockType(block.location, "minecraft:air");
+      return;
+    }
+    const newPermutation = BlockPermutation.resolve(block.typeId, {
+      ...block.permutation.getAllStates(),
+      "relleks_food:bites": bites + 1
+    });
+    block.setPermutation(newPermutation);
+  }
+};
+
+// ct:./blockEffectComponent.ts
+import { system as system3 } from "@minecraft/server";
+var BlockEffectComponent = class {
+  onPlayerInteract(event, params) {
+    const { player } = event;
+    const { effect, tickDuration, amplifier, tickDelay } = params.params;
+    system3.runTimeout(() => {
+      player.addEffect(effect, tickDuration, { amplifier, showParticles: true });
+    }, tickDelay);
+  }
+};
+
+// ct:/main.js
+system4.beforeEvents.startup.subscribe((initEvent) => {
+  initEvent.blockComponentRegistry.registerCustomComponent("relleks_food:eat_cake", new EatCakeComponent());
+  initEvent.blockComponentRegistry.registerCustomComponent("relleks_food:block_effect", new BlockEffectComponent());
+});
