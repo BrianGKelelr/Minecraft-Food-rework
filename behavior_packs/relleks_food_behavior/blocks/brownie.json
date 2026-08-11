@@ -11,6 +11,7 @@
       }
     },
     "components": {
+      "minecraft:loot": "loot_tables/nothing.json",
       "minecraft:geometry": "geometry.brownie.bites0",
       "minecraft:material_instances": {
         "*": {

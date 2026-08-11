@@ -179,8 +179,64 @@ var BlockEffectComponent = class {
   }
 };
 
+// ct:./grownLanternberryCropComponent.ts
+var GrownLanternberryCropComponent = class {
+  onPlayerInteract(arg) {
+    if (arg.player === void 0) {
+      return;
+    }
+    const pos = arg.block.location;
+    arg.dimension.runCommand(`loot spawn ${pos.x} ${pos.y} ${pos.z} loot "crops/lanternberry_grown_crop"`);
+    arg.block.setPermutation(arg.block.permutation.withState("relleks_food:crop_age", 2));
+  }
+};
+
+// ct:./cropGrowthComponent.ts
+import {
+  EntityInventoryComponent as EntityInventoryComponent2
+} from "@minecraft/server";
+var CropGrowthComponent = class _CropGrowthComponent {
+  static tryGrowBlock(block) {
+    const permutation = block.permutation;
+    const age = permutation.getState("relleks_food:crop_age");
+    if (age === void 0 || typeof age !== "number") {
+      return;
+    }
+    if (age === 4) {
+      return;
+    }
+    block.setPermutation(permutation.withState("relleks_food:crop_age", age + 1));
+  }
+  static tryFertilize(block, player) {
+    const inventory = player.getComponent(EntityInventoryComponent2.componentId);
+    if (inventory === void 0) {
+      return false;
+    }
+    const selectedItem = inventory.container?.getItem(player.selectedSlotIndex);
+    if (selectedItem && selectedItem.typeId === "minecraft:bone_meal") {
+      _CropGrowthComponent.tryGrowBlock(block);
+      selectedItem.amount--;
+      inventory.container?.setItem(player.selectedSlotIndex, selectedItem);
+      return true;
+    }
+    return false;
+  }
+  onRandomTick(arg) {
+    _CropGrowthComponent.tryGrowBlock(arg.block);
+  }
+  // fertilization growth with bone meal
+  onPlayerInteract(arg) {
+    if (arg.player === void 0) {
+      return;
+    }
+    _CropGrowthComponent.tryFertilize(arg.block, arg.player);
+  }
+};
+
 // ct:/main.js
 system4.beforeEvents.startup.subscribe((initEvent) => {
   initEvent.blockComponentRegistry.registerCustomComponent("relleks_food:eat_cake", new EatCakeComponent());
   initEvent.blockComponentRegistry.registerCustomComponent("relleks_food:block_effect", new BlockEffectComponent());
+  initEvent.blockComponentRegistry.registerCustomComponent("relleks_food:lanternberry_grown", new GrownLanternberryCropComponent());
+  initEvent.blockComponentRegistry.registerCustomComponent("relleks_food:crop_grow", new CropGrowthComponent());
 });

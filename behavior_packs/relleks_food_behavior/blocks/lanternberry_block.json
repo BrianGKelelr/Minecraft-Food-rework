@@ -1,0 +1,27 @@
+{
+  "format_version": "1.21.110",
+  "minecraft:block": {
+    "description": {
+      "identifier": "relleks_food:lanternberry_block"
+    },
+    "components": {
+      "minecraft:light_emission": 8,
+      "minecraft:loot": "loot_tables/crops/lanternberry_grown_crop.json",
+      "minecraft:geometry": "geometry.relleks_food_crop_geo",
+      "minecraft:collision_box": { "origin": [-4, 0, -4], "size": [8, 8, 8] },
+      "minecraft:selection_box": { "origin": [-4, 0, -4], "size": [8, 8, 8] },
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "brownie1",
+          "render_method": "alpha_test",
+          "ambient_occlusion": true,
+          "face_dimming": true
+        }
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 0
+      }
+    }
+}
+}
+    
