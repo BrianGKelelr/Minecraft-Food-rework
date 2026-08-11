@@ -33,6 +33,23 @@
             ]
           }
         ]
+      },
+      "minecraft:precipitation_interactions": {
+        "precipitation_behavior": "snowlogging"
+      },
+      "minecraft:liquid_detection": {
+        "detection_rules": [
+          {
+            "liquid_type": "water",
+            "on_liquid_touches": "popped"
+          }
+        ]
+      },
+      "minecraft:movable": {
+        "movement_type": "popped"
+      },
+      "minecraft:connection_rule": {
+        "accepts_connections_from": "none"
       }
     },
     "permutations": [
