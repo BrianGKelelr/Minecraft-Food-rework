@@ -1,0 +1,62 @@
+{
+  "format_version": "1.26.30",
+  "minecraft:item": {
+    "description": {
+      "menu_category": {
+        "group": "minecraft:itemGroup.name.crop",
+        "category": "nature"
+      },
+      "identifier": "relleks_food:lanternberry_golden"
+    },
+    "components": {
+      "minecraft:food": {
+        "nutrition": 4,
+        "saturation_modifier": 1.5
+      },
+      "minecraft:icon": {
+        "textures": {
+          "default": "mutton_stew"
+        }
+      },
+      "minecraft:tags": {
+        "tags": [
+          "minecraft:is_food"
+        ]
+      },
+      "minecraft:use_animation": {
+        "value": "eat"
+      },
+      "minecraft:use_modifiers": {
+        "start_using": "always",
+        "use_duration": 1.6,
+        "movement_modifier": 0.35
+      },
+      "relleks_food:item_effect": [
+        {
+            "effect": "fire_resistance",
+            "tickDuration": 800,
+            "amplifier": 0,
+            "tickDelay": 1
+        },
+        {
+            "effect": "haste",
+            "tickDuration": 3600,
+            "amplifier": 1,
+            "tickDelay": 1
+        },
+        {
+            "effect": "night_vision",
+            "tickDuration": 3600,
+            "amplifier": 0,
+            "tickDelay": 1
+        },
+        {
+            "effect": "absorption",
+            "tickDuration": 2400,
+            "amplifier": 1,
+            "tickDelay": 1
+        }
+      ]
+    }
+  }
+}

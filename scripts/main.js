@@ -243,10 +243,16 @@ var CropGrowthComponent = class _CropGrowthComponent {
 import { system as system4 } from "@minecraft/server";
 var ItemEffectComponent = class {
   onConsume(arg, params) {
-    const { effect, tickDuration, amplifier, tickDelay } = params.params;
-    system4.runTimeout(() => {
-      arg.source.addEffect(effect, tickDuration, { amplifier, showParticles: true });
-    }, tickDelay);
+    const raw = params.params;
+    const effects = Array.isArray(raw) ? raw : [raw];
+    for (const { effect, tickDuration, amplifier, tickDelay } of effects) {
+      system4.runTimeout(() => {
+        if (!arg.source) {
+          return;
+        }
+        arg.source.addEffect(effect, tickDuration, { amplifier, showParticles: true });
+      }, tickDelay);
+    }
   }
 };
 

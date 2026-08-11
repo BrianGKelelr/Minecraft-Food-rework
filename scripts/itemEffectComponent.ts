@@ -1,12 +1,27 @@
-import { system, BlockCustomComponent } from "@minecraft/server";
+import { system, ItemComponentConsumeEvent, ItemCustomComponent } from "@minecraft/server";
 
-export class ItemEffectComponent implements BlockCustomComponent {
+interface EffectConfig {
+    effect: string;
+    tickDuration: number;
+    amplifier: number;
+    tickDelay: number;
+}
 
-    onConsume(arg: ItemComponentConsumeEvent, params) { 
-        const { effect, tickDuration, amplifier, tickDelay } = params.params;
-        
+export class ItemEffectComponent implements ItemCustomComponent {
+
+    onConsume(arg: ItemComponentConsumeEvent, params) {
+    const raw = params.params;
+    const effects: EffectConfig[] = Array.isArray(raw) ? raw : [raw];
+
+    for (const { effect, tickDuration, amplifier, tickDelay } of effects) {
         system.runTimeout(() => {
+
+            if (!arg.source){
+                return;
+            }
+            
             arg.source.addEffect(effect, tickDuration, { amplifier: amplifier, showParticles: true });
-        }, tickDelay);  //apply effects after delay in ticks
+        }, tickDelay);
     }
+}
 }
