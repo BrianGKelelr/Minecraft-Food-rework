@@ -112,7 +112,10 @@
             "size": [ 8, 8, 8 ]
           },
           "minecraft:loot": "loot_tables/crops/lanternberry_grown_crop.json",
-          "relleks_food:lanternberry_grown": {}
+          "relleks_food:harvest_berry": {
+            "lootTable": "crops/lanternberry_grown_crop",
+            "resetAge": 2
+          }
         }
       }
     ]
