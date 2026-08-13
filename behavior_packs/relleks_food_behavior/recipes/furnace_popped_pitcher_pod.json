@@ -1,0 +1,17 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_furnace": {
+    "description": {
+      "identifier": "relleks_food:popped_pitcher_pod"
+    },
+    "tags": [
+      "furnace",
+      "smoker",
+      "campfire",
+      "soul_campfire"
+    ],
+    "input": "relleks_food:pitcher_pod",
+    "output": "relleks_food:popped_pitcher_pod",
+    "priority": 370
+  }
+}

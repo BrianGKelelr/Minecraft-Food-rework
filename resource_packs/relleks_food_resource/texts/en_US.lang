@@ -37,6 +37,8 @@ tile.relleks_food:lanternberry_block.name=Lanternberry Block
 item.relleks_food:lanternberry_seeds=Lanternberrys Seeds
 item.relleks_food:lanterberry=Lanternberry
 
+item.relleks_food:popped_pitcher_pod=Popped Pitcher Pod
+
 item.relleks_food:ice_cream=Ice Cream
 item.relleks_food:ice_cream_chocolate=Chocolate Ice Cream
 tile.relleks_food:cake_ice_cream.name=Ice Cream Cake
