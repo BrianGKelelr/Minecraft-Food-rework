@@ -203,6 +203,8 @@ function countdown(target, timeLeft, inventory) {
         return;
       }
     }
+    armedPlayers.delete(target.id);
+    return;
   }, 20);
 }
 
