@@ -1,0 +1,31 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+    "identifier": "relleks_food:strider_stew"
+    },
+    "tags": [ "crafting_table" ],
+    "unlock": [
+      {
+        "item": "relleks_food:strider_meat"
+      }
+    ],
+    "ingredients": [
+      {
+        "item": "minecraft:bowl"
+      },
+      {
+        "item": "relleks_food:strider_meat"
+      },
+      {
+        "item": "minecraft:crimson_fungus"
+      },
+      {
+        "item": "minecraft:warped_fungus"
+      }
+    ],
+    "result": {
+      "item": "relleks_food:strider_stew"
+    }
+  }
+}

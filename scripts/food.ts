@@ -19,14 +19,15 @@ const WELLFED2 = [
     "minecraft:cookie", "minecraft:honey_bottle", "minecraft:mushroom_stew", 
     "minecraft:cooked_beef", "relleks_food:jello", "relleks_food:jello_salad", 
     "relleks_food:lanternberry", "relleks_food:popped_pitcher_pod", "relleks_food:sniffer_meat_cooked", 
-    "relleks_food:sushi"
+    "relleks_food:sushi", "relleks_food:strider_meat"
 ]
 const WELLFED3 = [
     "minecraft:cake", "minecraft:golden_apple", "minecraft:enchanted_golden_apple", 
     "minecraft:golden_carrot", "minecraft:pumpkin_pie", "minecraft:rabbit_stew", 
     "minecraft:suspicious_stew", "relleks_food:beef_stew", "relleks_food:fruit_salad", 
     "relleks_food:ice_cream_chocolate", "relleks_food:ice_cream", "relleks_food:lanternberry_golden", 
-    "relleks_food:meatloaf", "relleks_food:mutton_stew", "relleks_food:vegetable_soup"
+    "relleks_food:meatloaf", "relleks_food:mutton_stew", "relleks_food:vegetable_soup",
+    "relleks_food:strider_stew"
 ]
 const WELLFED4 = [
     ""
