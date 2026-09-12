@@ -21,14 +21,14 @@ world.afterEvents.playerInventoryItemChange.subscribe((event) => {
     }
     armedPlayers.add(player.id);
 
-    player.setOnFire(10, true);
+    const inventory = player.getComponent(EntityComponentTypes.Inventory) as EntityInventoryComponent;
+    if (!inventory?.container) return;
+
+    countdown(player, 10, inventory);
 
     system.runTimeout(() => {
         armedPlayers.delete(player.id);
         if (!player) return;
-
-        const inventory = player.getComponent(EntityComponentTypes.Inventory) as EntityInventoryComponent;
-        if (!inventory?.container) return;
 
         const container = inventory.container;
         for (let slot = 0; slot < container.size; slot++) {
@@ -54,4 +54,27 @@ function explode(target: Entity): void {
     });
 
     target.applyDamage(255, {cause: EntityDamageCause.entityExplosion,});
+}
+
+function countdown(target:Entity, timeLeft:number, inventory:EntityInventoryComponent): void {
+    if (!target || timeLeft <= 0){
+        return;
+    }
+
+    target.setOnFire(2, true);
+    target.runCommand(`title @s actionbar ${timeLeft}`);
+
+    system.runTimeout(() => {
+        const container = inventory.container;
+        for (let slot = 0; slot < container.size; slot++) {
+            const item = container.getItem(slot);
+            if (item?.typeId === "relleks_food:hot_potato") {
+                countdown(target, timeLeft-1, inventory);
+                return;
+            }
+        }
+
+        armedPlayers.delete(target.id);
+        return;
+    }, 20)
 }

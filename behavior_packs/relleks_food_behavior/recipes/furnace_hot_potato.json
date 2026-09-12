@@ -10,7 +10,7 @@
       "campfire",
       "soul_campfire"
     ],
-    "input": "relleks_food:potato_baked_tonce",
+    "input": "minecraft:baked_potato",
     "output": "relleks_food:hot_potato",
     "priority": 370
   }

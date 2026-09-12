@@ -4,13 +4,62 @@ import { system as system5 } from "@minecraft/server";
 // ct:./food.ts
 import { world, system } from "@minecraft/server";
 var WELLFED1 = [
-  "minecraft:apple"
+  "minecraft:apple",
+  "minecraft:beetroot",
+  "minecraft:carrot",
+  "minecraft:chorus_fruit",
+  "minecraft:dried_kelp",
+  "minecraft:glow_berries",
+  "minecraft:melon_slice",
+  "minecraft:potato",
+  "minecraft:raw_beef",
+  "minecraft:raw_chicken",
+  "minecraft:raw_cod",
+  "minecraft:raw_mutton",
+  "minecraft:raw_porkchop",
+  "minecraft:raw_rabbit",
+  "minecraft:raw_salmon",
+  "minecraft:sweet_berries",
+  "minecraft:tropical_fish",
+  "relleks_food:sniffer_meat"
 ];
 var WELLFED2 = [
-  "minecraft:cooked_beef"
+  "minecraft:baked_potato",
+  "minecraft:beetroot_soup",
+  "minecraft:bread",
+  "minecraft:cooked_chicken",
+  "minecraft:cooked_cod",
+  "minecraft:cooked_mutton",
+  "minecraft:cooked_porkchop",
+  "minecraft:cooked_rabbit",
+  "minecraft:cooked_slamon",
+  "minecraft:cookie",
+  "minecraft:honey_bottle",
+  "minecraft:mushroom_stew",
+  "minecraft:cooked_beef",
+  "relleks_food:jello",
+  "relleks_food:jello_salad",
+  "relleks_food:lanternberry",
+  "relleks_food:popped_pitcher_pod",
+  "relleks_food:sniffer_meat_cooked",
+  "relleks_food:sushi"
 ];
 var WELLFED3 = [
-  "minecraft:mushroom_stew"
+  "minecraft:cake",
+  "minecraft:golden_apple",
+  "minecraft:enchanted_golden_apple",
+  "minecraft:golden_carrot",
+  "minecraft:pumpkin_pie",
+  "minecraft:rabbit_stew",
+  "minecraft:suspicious_stew",
+  "relleks_food:beef_stew",
+  "relleks_food:fruit_salad",
+  "relleks_food:ice_cream_chocolate",
+  "relleks_food:ice_cream",
+  "relleks_food:lanternberry_golden",
+  "relleks_food:meatloaf",
+  "relleks_food:mutton_stew",
+  "relleks_food:vegetable_soup"
 ];
 var WELLFED4 = [
   ""
@@ -62,20 +111,6 @@ function checkFullness(player) {
   }
   return false;
 }
-function applyWellFed1Effects() {
-  for (const player of world.getPlayers()) {
-    if (player.hasTag("well_fed_1")) {
-      player.runCommand("effect @s regeneration 3 0 true");
-    }
-  }
-}
-function applyWellFed2Effects() {
-  for (const player of world.getPlayers()) {
-    if (player.hasTag("well_fed_2")) {
-      player.runCommand("effect @s regeneration 3 0 true");
-    }
-  }
-}
 function applyWellFedEffects() {
   for (const player of world.getPlayers()) {
     if (!checkFullness(player)) {
@@ -86,20 +121,28 @@ function applyWellFedEffects() {
       player.runCommand("tag @s remove well_fed_5");
       return;
     }
-    if (player.hasTag("well_fed_3")) {
-      player.runCommand("effect @s regeneration 2 2 true");
-      player.runCommand("effect @s haste 1 0 true");
+    if (player.hasTag("well_fed_1")) {
+      player.runCommand("effect @s regeneration 1 0 true");
+    } else if (player.hasTag("well_fed_2")) {
+      player.runCommand("effect @s regeneration 1 0 true");
+      player.runCommand("effect @s speed 1 0 true");
+    } else if (player.hasTag("well_fed_3")) {
+      player.runCommand("effect @s regeneration 1 1 true");
+      player.runCommand("effect @s speed 1 0 true");
+      player.runCommand("effect @s resistance 1 0 true");
     } else if (player.hasTag("well_fed_4")) {
-      player.runCommand("effect @s regeneration 1 3 true");
+      player.runCommand("effect @s regeneration 1 2 true");
       player.runCommand("effect @s haste 1 0 true");
+      player.runCommand("effect @s speed 1 1 true");
+      player.runCommand("effect @s resistance 1 1 true");
     } else if (player.hasTag("well_fed_5")) {
-      player.runCommand("effect @s regeneration 1 4 true");
-      player.runCommand("effect @s haste 1 0 true");
+      player.runCommand("effect @s regeneration 1 3 true");
+      player.runCommand("effect @s haste 1 1 true");
+      player.runCommand("effect @s speed 1 1 true");
+      player.runCommand("effect @s resistance 1 2 true");
     }
   }
 }
-system.runInterval(applyWellFed1Effects, 80);
-system.runInterval(applyWellFed2Effects, 40);
 system.runInterval(applyWellFedEffects, 20);
 
 // ct:./hot_potato.ts
@@ -117,12 +160,12 @@ world2.afterEvents.playerInventoryItemChange.subscribe((event) => {
     return;
   }
   armedPlayers.add(player.id);
-  player.setOnFire(10, true);
+  const inventory = player.getComponent(EntityComponentTypes.Inventory);
+  if (!inventory?.container) return;
+  countdown(player, 10, inventory);
   system2.runTimeout(() => {
     armedPlayers.delete(player.id);
     if (!player) return;
-    const inventory = player.getComponent(EntityComponentTypes.Inventory);
-    if (!inventory?.container) return;
     const container = inventory.container;
     for (let slot = 0; slot < container.size; slot++) {
       const item = container.getItem(slot);
@@ -144,6 +187,23 @@ function explode(target) {
     source: target
   });
   target.applyDamage(255, { cause: EntityDamageCause.entityExplosion });
+}
+function countdown(target, timeLeft, inventory) {
+  if (!target || timeLeft <= 0) {
+    return;
+  }
+  target.setOnFire(2, true);
+  target.runCommand(`title @s actionbar ${timeLeft}`);
+  system2.runTimeout(() => {
+    const container = inventory.container;
+    for (let slot = 0; slot < container.size; slot++) {
+      const item = container.getItem(slot);
+      if (item?.typeId === "relleks_food:hot_potato") {
+        countdown(target, timeLeft - 1, inventory);
+        return;
+      }
+    }
+  }, 20);
 }
 
 // ct:./cakeComponent.ts
