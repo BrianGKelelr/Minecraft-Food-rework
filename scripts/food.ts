@@ -7,9 +7,9 @@ higher the well fed level, the more powerful the buffs the player will receive.
 const WELLFED1 = [
     "minecraft:apple", "minecraft:beetroot", "minecraft:carrot", 
     "minecraft:chorus_fruit", "minecraft:dried_kelp", "minecraft:glow_berries",
-    "minecraft:melon_slice", "minecraft:potato", "minecraft:raw_beef",
-    "minecraft:raw_chicken", "minecraft:raw_cod", "minecraft:raw_mutton", 
-    "minecraft:raw_porkchop", "minecraft:raw_rabbit", "minecraft:raw_salmon", 
+    "minecraft:melon_slice", "minecraft:potato", "minecraft:beef",
+    "minecraft:chicken", "minecraft:cod", "minecraft:mutton", 
+    "minecraft:porkchop", "minecraft:rabbit", "minecraft:salmon", 
     "minecraft:sweet_berries", "minecraft:tropical_fish", "relleks_food:sniffer_meat"
 ]
 const WELLFED2 = [
@@ -111,28 +111,28 @@ function applyWellFedEffects() {
         }
 
         if (player.hasTag("well_fed_1")){
-            player.runCommand("effect @s regeneration 1 0 true");
+            player.runCommand("effect @s regeneration 2 0 true");
         }
         else if (player.hasTag("well_fed_2")){
-            player.runCommand("effect @s regeneration 1 0 true");
-            player.runCommand("effect @s speed 1 0 true");
+            player.runCommand("effect @s regeneration 2 0 true");
+            player.runCommand("effect @s speed 2 0 true");
         }
         else if (player.hasTag("well_fed_3")){
-            player.runCommand("effect @s regeneration 1 1 true");
-            player.runCommand("effect @s speed 1 0 true");
-            player.runCommand("effect @s resistance 1 0 true");
+            player.runCommand("effect @s regeneration 2 1 true");
+            player.runCommand("effect @s speed 2 0 true");
+            player.runCommand("effect @s resistance 2 0 true");
         }
         else if (player.hasTag("well_fed_4")){
-            player.runCommand("effect @s regeneration 1 2 true");
-            player.runCommand("effect @s haste 1 0 true");
-            player.runCommand("effect @s speed 1 1 true");
-            player.runCommand("effect @s resistance 1 1 true");
+            player.runCommand("effect @s regeneration 2 2 true");
+            player.runCommand("effect @s haste 2 0 true");
+            player.runCommand("effect @s speed 2 1 true");
+            player.runCommand("effect @s resistance 2 1 true");
         }
         else if (player.hasTag("well_fed_5")){
-            player.runCommand("effect @s regeneration 1 3 true");
-            player.runCommand("effect @s haste 1 1 true");
-            player.runCommand("effect @s speed 1 1 true");
-            player.runCommand("effect @s resistance 1 2 true");
+            player.runCommand("effect @s regeneration 2 3 true");
+            player.runCommand("effect @s haste 2 1 true");
+            player.runCommand("effect @s speed 2 1 true");
+            player.runCommand("effect @s resistance 2 2 true");
         }
     }
 }
