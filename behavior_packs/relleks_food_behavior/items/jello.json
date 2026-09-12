@@ -2,19 +2,19 @@
   "format_version": "1.26.30",
   "minecraft:item": {
     "description": {
-      "identifier": "relleks_food:potato_baked_thrice",
+      "identifier": "relleks_food:jello",
         "menu_category": {
         "category": "items"
       }
     },
     "components": {
       "minecraft:food": {
-        "nutrition": 3,
+        "nutrition": 2,
         "saturation_modifier": 0.3
       },
       "minecraft:icon": {
         "textures": {
-          "default": "thrice_baked_potato"
+          "default": "mutton_stew"
         }
       },
       "minecraft:tags": {
@@ -27,7 +27,7 @@
       },
       "minecraft:use_modifiers": {
         "start_using": "always",
-        "use_duration": 1.6,
+        "use_duration": 1,
         "movement_modifier": 0.35
       }
     }

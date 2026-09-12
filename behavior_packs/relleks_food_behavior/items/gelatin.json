@@ -2,7 +2,7 @@
   "format_version": "1.26.30",
   "minecraft:item": {
     "description": {
-      "identifier": "relleks_food:potato_baked_quarce",
+      "identifier": "relleks_food:gelatin",
         "menu_category": {
         "category": "items"
       }
@@ -10,7 +10,7 @@
     "components": {
       "minecraft:icon": {
         "textures": {
-          "default": "quarce_baked_potato"
+          "default": "mutton_stew"
         }
       }
     }

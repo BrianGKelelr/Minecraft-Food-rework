@@ -2,19 +2,19 @@
   "format_version": "1.26.30",
   "minecraft:item": {
     "description": {
-      "identifier": "relleks_food:potato_baked_twice",
+      "identifier": "relleks_food:sushi",
         "menu_category": {
         "category": "items"
       }
     },
     "components": {
       "minecraft:food": {
-        "nutrition": 6,
-        "saturation_modifier": 0.5
+        "nutrition": 8,
+        "saturation_modifier": 1
       },
       "minecraft:icon": {
         "textures": {
-          "default": "twice_baked_potato"
+          "default": "mutton_stew"
         }
       },
       "minecraft:tags": {

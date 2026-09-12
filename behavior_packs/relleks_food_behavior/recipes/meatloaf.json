@@ -1,0 +1,33 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "relleks_food:meatloaf"
+    },
+    "tags": [ "crafting_table" ],
+    "unlock": [
+      {
+        "item": "relleks_food:gelatin"
+      }
+    ],
+    "pattern": [
+      " A ",
+      "BBB",
+      " C "
+    ],
+    "key": {
+      "A": {
+        "item": "relleks_food:gelatin"
+      },
+      "B": {
+        "item": "minecraft:beef"
+      },
+      "C": {
+        "item": "minecraft:egg"
+      }
+    },
+    "result": {
+      "item": "relleks_food:meatloaf"
+    }
+  }
+}

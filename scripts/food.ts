@@ -5,13 +5,28 @@ Different food items are grouped into different well fed levels. The
 higher the well fed level, the more powerful the buffs the player will receive.
 */
 const WELLFED1 = [
-  "minecraft:apple"
+    "minecraft:apple", "minecraft:beetroot", "minecraft:carrot", 
+    "minecraft:chorus_fruit", "minecraft:dried_kelp", "minecraft:glow_berries",
+    "minecraft:melon_slice", "minecraft:potato", "minecraft:raw_beef",
+    "minecraft:raw_chicken", "minecraft:raw_cod", "minecraft:raw_mutton", 
+    "minecraft:raw_porkchop", "minecraft:raw_rabbit", "minecraft:raw_salmon", 
+    "minecraft:sweet_berries", "minecraft:tropical_fish", "relleks_food:sniffer_meat"
 ]
 const WELLFED2 = [
-    "minecraft:cooked_beef"
+    "minecraft:baked_potato", "minecraft:beetroot_soup", "minecraft:bread", 
+    "minecraft:cooked_chicken", "minecraft:cooked_cod", "minecraft:cooked_mutton", 
+    "minecraft:cooked_porkchop", "minecraft:cooked_rabbit", "minecraft:cooked_slamon", 
+    "minecraft:cookie", "minecraft:honey_bottle", "minecraft:mushroom_stew", 
+    "minecraft:cooked_beef", "relleks_food:jello", "relleks_food:jello_salad", 
+    "relleks_food:lanternberry", "relleks_food:popped_pitcher_pod", "relleks_food:sniffer_meat_cooked", 
+    "relleks_food:sushi"
 ]
 const WELLFED3 = [
-    "minecraft:mushroom_stew"
+    "minecraft:cake", "minecraft:golden_apple", "minecraft:enchanted_golden_apple", 
+    "minecraft:golden_carrot", "minecraft:pumpkin_pie", "minecraft:rabbit_stew", 
+    "minecraft:suspicious_stew", "relleks_food:beef_stew", "relleks_food:fruit_salad", 
+    "relleks_food:ice_cream_chocolate", "relleks_food:ice_cream", "relleks_food:lanternberry_golden", 
+    "relleks_food:meatloaf", "relleks_food:mutton_stew", "relleks_food:vegetable_soup"
 ]
 const WELLFED4 = [
     ""
@@ -81,31 +96,8 @@ function checkFullness(player): boolean{
 }
 
 /*
-Applies the regeneration effect to players with the well_fed_1 tag every 4 seconds.
-*/
-function applyWellFed1Effects() {
-    for (const player of world.getPlayers()) {
-        if (player.hasTag("well_fed_1")) {
-            player.runCommand("effect @s regeneration 3 0 true");
-        }
-    }
-}
-
-/*
-Applies the regeneration effect to players with the well_fed_2 tag every 2 seconds.
-*/
-function applyWellFed2Effects() {
-    for (const player of world.getPlayers()) {
-        if (player.hasTag("well_fed_2")) {
-            player.runCommand("effect @s regeneration 3 0 true");
-        }
-    }
-}
-
-/*
 Removes well fed tags from players who are not full every second.
 For players who are full, applies the appropriate well fed effects based on their well fed tag 
-for well fed modifiers 3 through 5 every second.
 */
 function applyWellFedEffects() {
     for (const player of world.getPlayers()) {
@@ -115,27 +107,35 @@ function applyWellFedEffects() {
             player.runCommand("tag @s remove well_fed_3");
             player.runCommand("tag @s remove well_fed_4");
             player.runCommand("tag @s remove well_fed_5");
-            return;  // Skip applying effects if the player is not full
+            return;
         }
 
-        if (player.hasTag("well_fed_3")) {
-            player.runCommand("effect @s regeneration 2 2 true");
-            player.runCommand("effect @s haste 1 0 true");
+        if (player.hasTag("well_fed_1")){
+            player.runCommand("effect @s regeneration 1 0 true");
+        }
+        else if (player.hasTag("well_fed_2")){
+            player.runCommand("effect @s regeneration 1 0 true");
+            player.runCommand("effect @s speed 1 0 true");
+        }
+        else if (player.hasTag("well_fed_3")){
+            player.runCommand("effect @s regeneration 1 1 true");
+            player.runCommand("effect @s speed 1 0 true");
+            player.runCommand("effect @s resistance 1 0 true");
         }
         else if (player.hasTag("well_fed_4")){
-            player.runCommand("effect @s regeneration 1 3 true");
+            player.runCommand("effect @s regeneration 1 2 true");
             player.runCommand("effect @s haste 1 0 true");
+            player.runCommand("effect @s speed 1 1 true");
+            player.runCommand("effect @s resistance 1 1 true");
         }
         else if (player.hasTag("well_fed_5")){
-            player.runCommand("effect @s regeneration 1 4 true");
-            player.runCommand("effect @s haste 1 0 true");
+            player.runCommand("effect @s regeneration 1 3 true");
+            player.runCommand("effect @s haste 1 1 true");
+            player.runCommand("effect @s speed 1 1 true");
+            player.runCommand("effect @s resistance 1 2 true");
         }
     }
 }
 
-
-
-system.runInterval(applyWellFed1Effects, 80);  // Run the function every 80 ticks (4 seconds)
-system.runInterval(applyWellFed2Effects, 40);  // Run the function every 40 ticks (2 seconds)
 system.runInterval(applyWellFedEffects, 20);  // Run the function every 20 ticks (1 second)
 

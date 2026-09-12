@@ -1,0 +1,25 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "relleks_food:jello_salad"
+    },
+    "tags": [ "crafting_table" ],
+    "unlock": [
+      {
+        "item": "relleks_food:jello"
+      }
+    ],
+    "pattern": [
+      "AAA"
+    ],
+    "key": {
+      "A": {
+        "item": "relleks_food:jello"
+      }
+    },
+    "result": {
+      "item": "relleks_food:jello_salad"
+    }
+  }
+}
