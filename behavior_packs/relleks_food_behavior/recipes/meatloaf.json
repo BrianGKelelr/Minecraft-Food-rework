@@ -27,7 +27,8 @@
       }
     },
     "result": {
-      "item": "relleks_food:meatloaf"
+      "item": "relleks_food:meatloaf",
+      "count": 3
     }
   }
 }
