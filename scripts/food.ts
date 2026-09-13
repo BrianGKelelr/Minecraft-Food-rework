@@ -5,14 +5,6 @@ Different food items are grouped into different well fed levels. The
 higher the well fed level, the more powerful the buffs the player will receive.
 */
 const WELLFED1 = [
-    "minecraft:apple", "minecraft:beetroot", "minecraft:carrot", 
-    "minecraft:chorus_fruit", "minecraft:dried_kelp", "minecraft:glow_berries",
-    "minecraft:melon_slice", "minecraft:potato", "minecraft:beef",
-    "minecraft:chicken", "minecraft:cod", "minecraft:mutton", 
-    "minecraft:porkchop", "minecraft:rabbit", "minecraft:salmon", 
-    "minecraft:sweet_berries", "minecraft:tropical_fish", "relleks_food:sniffer_meat"
-]
-const WELLFED2 = [
     "minecraft:baked_potato", "minecraft:beetroot_soup", "minecraft:bread", 
     "minecraft:cooked_chicken", "minecraft:cooked_cod", "minecraft:cooked_mutton", 
     "minecraft:cooked_porkchop", "minecraft:cooked_rabbit", "minecraft:cooked_slamon", 
@@ -21,7 +13,7 @@ const WELLFED2 = [
     "relleks_food:lanternberry", "relleks_food:popped_pitcher_pod", "relleks_food:sniffer_meat_cooked", 
     "relleks_food:sushi", "relleks_food:strider_meat"
 ]
-const WELLFED3 = [
+const WELLFED2 = [
     "minecraft:cake", "minecraft:golden_apple", "minecraft:enchanted_golden_apple", 
     "minecraft:golden_carrot", "minecraft:pumpkin_pie", "minecraft:rabbit_stew", 
     "minecraft:suspicious_stew", "relleks_food:beef_stew", "relleks_food:fruit_salad", 
@@ -29,10 +21,10 @@ const WELLFED3 = [
     "relleks_food:meatloaf", "relleks_food:mutton_stew", "relleks_food:vegetable_soup",
     "relleks_food:strider_stew"
 ]
-const WELLFED4 = [
+const WELLFED3 = [
     ""
 ]
-const WELLFED5 = [
+const WELLFED4 = [
     ""
 ]
 
@@ -74,13 +66,6 @@ world.afterEvents.itemCompleteUse.subscribe((event) => {
             }
         }, 2);
     }
-    else if (WELLFED5.includes(itemID)) {
-        system.runTimeout(() => {
-            if (checkFullness(player)) {
-                player.runCommand("tag @s add well_fed_5");
-            }
-        }, 2);
-    }
 });
 
 /*
@@ -107,7 +92,6 @@ function applyWellFedEffects() {
             player.runCommand("tag @s remove well_fed_2");
             player.runCommand("tag @s remove well_fed_3");
             player.runCommand("tag @s remove well_fed_4");
-            player.runCommand("tag @s remove well_fed_5");
             return;
         }
 
@@ -115,25 +99,13 @@ function applyWellFedEffects() {
             player.runCommand("effect @s regeneration 2 0 true");
         }
         else if (player.hasTag("well_fed_2")){
-            player.runCommand("effect @s regeneration 2 0 true");
-            player.runCommand("effect @s speed 2 0 true");
+            player.runCommand("effect @s regeneration 2 1 true");
         }
         else if (player.hasTag("well_fed_3")){
-            player.runCommand("effect @s regeneration 2 1 true");
-            player.runCommand("effect @s speed 2 0 true");
-            player.runCommand("effect @s resistance 2 0 true");
+            player.runCommand("effect @s regeneration 2 2 true");
         }
         else if (player.hasTag("well_fed_4")){
-            player.runCommand("effect @s regeneration 2 2 true");
-            player.runCommand("effect @s haste 2 0 true");
-            player.runCommand("effect @s speed 2 1 true");
-            player.runCommand("effect @s resistance 2 1 true");
-        }
-        else if (player.hasTag("well_fed_5")){
             player.runCommand("effect @s regeneration 2 3 true");
-            player.runCommand("effect @s haste 2 1 true");
-            player.runCommand("effect @s speed 2 1 true");
-            player.runCommand("effect @s resistance 2 2 true");
         }
     }
 }
